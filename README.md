@@ -86,14 +86,14 @@ python scripts/split_by_shots.py input.mp4 --out ./shots --json shots.json
 
 双击 `scripts/run_gui.bat`（Windows）→ 选视频 → 选灵敏度档位 → 开始切片。
 
-首次使用先准备环境：
+首次使用先在**仓库根目录**准备环境即可，启动器会自动找到它，**不需要改脚本里的任何路径**：
 
 ```bat
-<你的 Python 路径>\python.exe -m venv .venv
+python -m venv .venv
 .venv\Scripts\python.exe -m pip install "scenedetect[opencv]"
 ```
 
-然后把 `run_gui.bat` 里的 python 路径改成该 venv 的 `pythonw.exe`。
+启动器按这个顺序找 Python：`<仓库>\.venv\Scripts\pythonw.exe` → `scripts\.venv\Scripts\pythonw.exe` → PATH 里的 `pythonw` / `python`。都找不到时会弹出提示，把该建的 venv 命令直接打在窗口里。
 
 **界面选项**：视频文件 / 输出目录（留空则在视频同目录建 `视频名_shots/`）、切分灵敏度（粗 / 标准 / 精细 / 极细 / 不漏）、固定时长切分（秒）、碎渣过滤（秒）、极速模式、仅预览清单。
 
@@ -144,10 +144,11 @@ python scripts/split_by_shots.py input.mp4 --out ./shots --json shots.json
 ```
 README.md                          项目说明
 SKILL.md                           技能文档（完整调参 / 排障指南）
+LICENSE                            MIT
 scripts/
   split_by_shots.py                核心 CLI（检测 + 切片）
   video_shot_splitter_gui.py       tkinter 图形界面
-  run_gui.bat                      双击启动器（无黑窗）
+  run_gui.bat                      双击启动器（无黑窗，自动找 Python）
   run_gui_debug.bat                调试版（带控制台，看得到报错）
   run_gui_diagnose.bat             环境自检
   _selftest.py                     自检脚本
