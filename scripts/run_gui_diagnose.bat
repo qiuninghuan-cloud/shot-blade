@@ -1,6 +1,6 @@
 @echo off
 setlocal
-set "VENV_PY=C:\Users\NING MEI\.workbuddy\venvs\shot-splitter-gui\Scripts\python.exe"
+set "VENV_PY=C:\Users\%USERNAME%\.workbuddy\venvs\shot-splitter-gui\Scripts\python.exe"
 set "SCRIPT_DIR=%~dp0"
 
 if not exist "%VENV_PY%" (

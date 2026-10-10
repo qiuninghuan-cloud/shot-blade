@@ -88,8 +88,8 @@ python split_by_shots.py input.mp4 --copy                            # 极速流
 
 **首次环境准备**（只需一次，本机已完成）：
 ```bat
-"C:\Users\NING MEI\AppData\Local\Programs\Python\Python312\python.exe" -m venv C:\Users\NING MEI\.workbuddy\venvs\shot-splitter-gui
-C:\Users\NING MEI\.workbuddy\venvs\shot-splitter-gui\Scripts\python.exe -m pip install "scenedetect[opencv]"
+"C:\Users\<你的用户名>\AppData\Local\Programs\Python\Python312\python.exe" -m venv C:\Users\<你的用户名>\.workbuddy\venvs\shot-splitter-gui
+C:\Users\<你的用户名>\.workbuddy\venvs\shot-splitter-gui\Scripts\python.exe -m pip install "scenedetect[opencv]"
 ```
 > 受管 Python 3.13 缺 tkinter，所以 GUI 走系统 Python 3.12 的 venv；往系统 Python 直接装包会被 WorkBuddy 的 safe-delete 保护拦截，必须走 venv（必要时设 `CODEBUDDY_SAFE_DELETE_ENABLED=0`）。
 
