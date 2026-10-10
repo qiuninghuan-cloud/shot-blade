@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+*.log
+gui_crash.log
+selftest.log
+
+# 切片产物
+*_shots/
+shot_*.mp4
+shots.json
